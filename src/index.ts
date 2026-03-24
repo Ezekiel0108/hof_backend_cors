@@ -1,4 +1,5 @@
 import express, { Express, Request, Response } from 'express';
+import cors from 'cors';
 import path from 'path';
 import progettiRoutes from './routes/progetti';
 import studentiRoutes from './routes/studenti';
@@ -7,6 +8,9 @@ import progettoStudentiRoutes from './routes/progetto_studenti';
 
 const app: Express = express();
 const port: number = 3000;
+
+app.use(cors());
+app.use(express.static(path.join(__dirname, '..', 'dist')));
 
 app.use(express.static(path.join(__dirname, '..', 'dist')));
 
