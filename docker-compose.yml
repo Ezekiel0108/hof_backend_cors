@@ -1,0 +1,8 @@
+services:
+  app:
+    build: .
+    image: node:25.8.2-alpine3.23
+    container_name: hof_backend
+    ports:
+      - "3000:3000"
+    restart: unless-stopped
